@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TestApp.Models.InputBPKB>
+
+@{
+    ViewData["Title"] = "BPKB List";
+}
+
+<h2>BPKB List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Agreement Number</th>
+            <th>BPKB No</th>
+            <th>Branch Id</th>
+            <th>BPKB Date</th>
+            <th>Faktur No</th>
+            <th>Faktur Date</th>
+            <th>Location Id</th>
+            <th>Police No</th>
+            <th>BPKB Date In</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bpkb in Model)
+        {
+            <tr>
+                <td>@bpkb.agreement_number</td>
+                <td>@bpkb.bpkb_no</td>
+                <td>@bpkb.branch_id</td>
+                <td>@bpkb.bpkb_date.ToString("yyyy-MM-dd")</td>
+                <td>@bpkb.faktur_no</td>
+                <td>@bpkb.faktur_date.ToString("yyyy-MM-dd")</td>
+                <td>@bpkb.location_id</td>
+                <td>@bpkb.police_no</td>
+                <td>@bpkb.bpkb_date_in.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Create" class="btn btn-primary">Create New BPKB</a>
+</div>

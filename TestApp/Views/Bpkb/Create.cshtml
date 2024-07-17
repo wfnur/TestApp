@@ -1,0 +1,64 @@
+﻿@model TestApp.Models.InputBPKB
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h2>Create BPKB</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="agreement_number" class="control-label"></label>
+        <input asp-for="agreement_number" class="form-control" />
+        <span asp-validation-for="agreement_number" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="bpkb_no" class="control-label"></label>
+        <input asp-for="bpkb_no" class="form-control" />
+        <span asp-validation-for="bpkb_no" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="branch_id" class="control-label"></label>
+        <input asp-for="branch_id" class="form-control" />
+        <span asp-validation-for="branch_id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="bpkb_date" class="control-label"></label>
+        <input asp-for="bpkb_date" class="form-control" type="date" />
+        <span asp-validation-for="bpkb_date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="faktur_no" class="control-label"></label>
+        <input asp-for="faktur_no" class="form-control" />
+        <span asp-validation-for="faktur_no" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="faktur_date" class="control-label"></label>
+        <input asp-for="faktur_date" class="form-control" type="date" />
+        <span asp-validation-for="faktur_date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="location_id" class="control-label"></label>
+        <input asp-for="location_id" class="form-control" />
+        <span asp-validation-for="location_id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="police_no" class="control-label"></label>
+        <input asp-for="police_no" class="form-control" />
+        <span asp-validation-for="police_no" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="bpkb_date_in" class="control-label"></label>
+        <input asp-for="bpkb_date_in" class="form-control" type="date" />
+        <span asp-validation-for="bpkb_date_in" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
+
