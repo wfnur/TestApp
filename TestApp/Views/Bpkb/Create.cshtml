@@ -38,9 +38,14 @@
         <span asp-validation-for="faktur_date" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="location_id" class="control-label"></label>
-        <input asp-for="location_id" class="form-control" />
-        <span asp-validation-for="location_id" class="text-danger"></span>
+        <label for="location_id">Location</label>
+        <select class="form-control" id="location_id" name="location_id" required>
+            <option value="">Select Location</option>
+            @foreach (var location in Model.Locations)
+            {
+                <option value="@location.location_id">@location.location_name</option>
+            }
+        </select>
     </div>
     <div class="form-group">
         <label asp-for="police_no" class="control-label"></label>

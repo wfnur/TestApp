@@ -49,5 +49,20 @@ namespace TestApp.Services
                 throw new HttpRequestException($"Request to api/bpkb failed with status code {response.StatusCode}");
             }
         }
+
+        public async Task<IEnumerable<StorageLocation>> GetLocationAsync(string url)
+        {
+            var response = await _httpClient.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<IEnumerable<StorageLocation>>(result);
+            }
+            else
+            {
+                throw new HttpRequestException($"Request to api/bpkb failed with status code {response.StatusCode}");
+            }
+        }
     }
 }

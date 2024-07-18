@@ -15,5 +15,7 @@ namespace TestApp.Models
         public string created_by { get; set; }
         public string last_updated_by { get; set; }
         public DateTime bpkb_date_in { get; set; }
+
+        public IEnumerable<StorageLocation> Locations { get; set; }
     }
 }
